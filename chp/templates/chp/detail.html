@@ -1,0 +1,19 @@
+{% extends 'chp/base.html' %}
+{% block content %}
+    {% for c in u1 %}
+    <article class="media content-section">
+      <h3> {{ c.username }}'s details</h3>
+        <hr>
+          <div class="media-body">
+              <p>Username : {{ c.username }}</p>
+              <p>Full Name : {{ c.first_name }} {{ c.last_name }} </p>
+    {% endfor %}
+    {% for d in p1%}
+              <p>UID : {{ d.UID }}</p>
+              <p>Gender : {{ d.Gender }}</p>
+              <p>Residence : {{ d.residence }}</p>
+              <p>Room No : {{ d.room_no }}</p>
+        </div>
+      </article>
+    {% endfor %}
+{% endblock content %}

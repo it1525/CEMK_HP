@@ -1,0 +1,17 @@
+{% extends 'chp/base.html' %}
+  {% block content %}
+    {% for p in result %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-detail' p.complain_user.username %}">{{ p.complain_user }}</a>
+              <small class="text-muted">{{ p.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'complain-update' p.id %}">{{ p.complain_subject }}</a></h2>
+            <p class="article-content">{{ p.complain_description}}</p>
+            <p class="article-content">{{ p.status }}</p>
+            <small class="text-muted">To change status click on complain's subject</small>
+          </div>
+        </article>
+    {% endfor %}
+  {% endblock content %}

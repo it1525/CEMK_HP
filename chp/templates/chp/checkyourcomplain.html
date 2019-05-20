@@ -1,0 +1,16 @@
+{% extends 'chp/base.html' %}
+{% block content %}
+    {% for c in q1 %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <h5 class="mr-2">{{ c.complain_user }}</h5>
+              <small class="text-muted">{{ c.date_posted }}</small>
+            </div>
+            <h3 class="article-title"> {{ c.complain_subject }}</h2>
+            <hr>
+            <p class="article-content">{{ c.complain_description }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
